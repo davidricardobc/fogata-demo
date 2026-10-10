@@ -1,0 +1,192 @@
+/* Capa fotográfica: el lienzo ocupa la figura; la foto fija queda como respaldo
+   hasta que las imágenes de la escena terminan de cargar. */
+.food-visual .photo-canvas {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  opacity:0;
+  transition:opacity 400ms
+}
+
+.food-visual.is-ready .photo-canvas {
+  opacity:1
+}
+
+.food-visual.is-ready .poster {
+  visibility:hidden
+}
+
+html.static-mode .food-visual .photo-canvas {
+  display:none
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .food-visual .photo-canvas {
+    display:none
+  }
+}
+
+/* Luz cálida detrás del plato: separa la foto del fondo como en un estudio. */
+.burger-visual::before {
+  content:'';
+  position:absolute;
+  inset:18% 14% 6%;
+  background:radial-gradient(closest-side,rgba(255,138,64,.20),rgba(255,138,64,.06) 60%,transparent);
+  z-index:-1
+}
+
+.twirl-canvas {
+  position:absolute;
+  z-index:0;
+  transform-origin:50% 50%
+}
+
+.food-visual .photo-canvas {
+  z-index:1
+}
+
+/* Pizza: mesa de mármol real de fondo; sombra a la izquierda para leer el texto. */
+.pizza-stage {
+  background:#15100d url(assets/pizza/p-07-mesa.webp) center/cover no-repeat
+}
+
+.pizza-stage::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(90deg,rgba(18,11,8,.92) 0%,rgba(18,11,8,.62) 38%,rgba(18,11,8,.12) 70%,rgba(18,11,8,.3) 100%);
+  pointer-events:none
+}
+
+.pizza-stage .oven-arch {
+  z-index:1;
+  border-color:transparent
+}
+
+/* Limonada: el verde de la foto de la licuadora, para que se funda sin bordes. */
+.drinks-stage {
+  background:radial-gradient(ellipse at 70% 50%,#1a3d28,#122f1f 60%);
+  color:#eef5e4
+}
+
+.drinks-copy h2 span {
+  color:#b9e07a
+}
+
+.drinks-copy>p,.drinks-stage .scene-caption {
+  color:#c9dcc0
+}
+
+.drinks-stage .cool-orbit {
+  display:none
+}
+
+@media(max-width:700px) {
+  .pizza-stage::before {
+    background:linear-gradient(180deg,rgba(18,11,8,.9) 0%,rgba(18,11,8,.55) 30%,rgba(18,11,8,.1) 55%,rgba(18,11,8,.5) 100%)
+  }
+}
+
+/* En celular la pizza ocupa el ancho: las etiquetas del proceso quedaban encima. */
+@media(max-width:700px) {
+  .pizza-stage .pizza-process {
+    display:none
+  }
+}
+
+/* Cierre: papas a la izquierda y cerveza a la derecha, alrededor del titular.
+   La primera pantalla del naranja es el escenario de la escena. */
+.closing-top {
+  position:relative;
+  max-width:none;
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center
+}
+
+.closing-top>:not(.close-visual) {
+  position:relative;
+  z-index:2
+}
+
+.closing h2 {
+  font-size:clamp(56px,7.6vw,118px)
+}
+
+.close-visual {
+  position:absolute;
+  inset:0 calc(var(--sc-gutter)*-1);
+  margin:0;
+  z-index:1;
+  pointer-events:none
+}
+
+.close-visual .photo-canvas {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%
+}
+
+.close-poster {
+  position:absolute;
+  inset:0
+}
+
+/* Más específico que ".poster img" de style.css, que las estiraba a pantalla completa. */
+.close-poster img.close-poster-basket,.close-poster img.close-poster-beer {
+  inset:auto;
+  bottom:2%;
+  height:auto;
+  object-fit:initial
+}
+
+.close-poster img.close-poster-basket {
+  left:4%;
+  width:min(30vw,62vh)
+}
+
+.close-poster img.close-poster-beer {
+  right:7%;
+  width:min(15vw,40vh)
+}
+
+.close-visual.is-ready .close-poster {
+  visibility:hidden
+}
+
+@media(max-width:700px) {
+  .closing-top {
+    min-height:0;
+    justify-content:flex-start
+  }
+
+  .closing h2 {
+    font-size:64px
+  }
+
+  .close-visual {
+    position:relative;
+    inset:auto;
+    order:10;
+    width:calc(100% + 48px);
+    height:44svh;
+    min-height:280px;
+    margin:28px -24px 0
+  }
+
+  .close-poster img.close-poster-basket {
+    left:0;
+    width:58%
+  }
+
+  .close-poster img.close-poster-beer {
+    right:8%;
+    width:26%
+  }
+}

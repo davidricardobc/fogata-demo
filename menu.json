@@ -1,0 +1,22 @@
+{
+  "hamburguesas": [
+    {"nombre":"Fogata Clásica","precio":24900,"detalle":"Carne 150 g, cheddar, lechuga y tomate."},
+    {"nombre":"Doble Humo","precio":32900,"detalle":"Doble carne, tocineta, cebolla caramelizada y salsa BBQ."},
+    {"nombre":"La Campesina","precio":29900,"detalle":"Carne, queso campesino, maduro y hogao."},
+    {"nombre":"Pollo Crujiente","precio":26900,"detalle":"Pollo apanado, doradito y crujiente."}
+  ],
+  "pizzas": [
+    {"nombre":"Margarita","precio":32900,"detalle":"Tomate, mozzarella y albahaca."},
+    {"nombre":"Pepperoni","precio":36900,"detalle":"Mozzarella y pepperoni sobre salsa de tomate."},
+    {"nombre":"Hawaiana","precio":35900,"detalle":"Jamón, piña y mozzarella."},
+    {"nombre":"Carnes de la Casa","precio":42900,"detalle":"Pepperoni, tocineta, jamón y mozzarella."},
+    {"nombre":"Champiñón y Trufa","precio":44900,"detalle":"Champiñones, mozzarella y aceite de trufa."}
+  ],
+  "bebidas": [
+    {"nombre":"Limonada Natural","precio":8900,"detalle":"Limón recién exprimido."},
+    {"nombre":"Limonada de Coco","precio":12900,"detalle":"Cremosa, cítrica y bien fría."},
+    {"nombre":"Limonada de Hierbabuena","precio":10900,"detalle":"Limón con un toque de hierbabuena."},
+    {"nombre":"Jugo de Maracuyá","precio":9900,"detalle":"El sabor tropical que refresca."},
+    {"nombre":"Soda Italiana","precio":11900,"detalle":"Fruta, hielo y burbujas."}
+  ]
+}
